@@ -189,13 +189,20 @@ body {
   background-size: 1200% 1200%;
   animation: rotate2 20s infinite;
   height: 500px;
-  aspect-ratio: 1;
   position: absolute;
+  aspect-ratio: 1;
   left: 50%;
   top: 50%;
   translate: -50% -50%;
   border-radius: 50%;
   z-index: -2;
+}
+
+#blob-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 @keyframes rotate {
