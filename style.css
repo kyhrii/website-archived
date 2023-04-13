@@ -1,0 +1,232 @@
+:root {
+  --card-color: rgb(30, 30, 30);
+}
+
+body {
+  background-color: rgb(20, 20, 20);
+  display: grid;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.card-wrapper {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1000px;
+  padding: 1em 0em;
+  place-self: center;
+  position: relative;
+  width: calc(100% - 2em);
+  z-index: 2;
+}
+
+.card {
+  background-color: var(--card-color);
+  border-radius: 0.75em;
+  cursor: pointer;
+  height: 240px;
+  position: relative;
+}
+
+.card:hover:before {
+  opacity: 1;
+}
+
+.card:before {
+  background: linear-gradient(
+    45deg,
+    transparent 5%,
+    rgb(163, 186, 192) 50%,
+    transparent 99%
+  );
+  border-radius: inherit;
+  content: "";
+  inset: 0px;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 400ms;
+  z-index: 0;
+}
+
+.card-content-wrapper {
+  background-color: rgb(30, 30, 30);
+  border-radius: inherit;
+  display: grid;
+  inset: 1px;
+  padding: 1em;
+  position: absolute;
+}
+
+.card-content {
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card.youtube .card-content {
+  color: #ff0000;
+}
+
+.card.twitch .card-content {
+  color: #a970ff;
+}
+
+.card.discord .card-content {
+  color: #5865F2
+}
+
+.card.twitter .card-content {
+  color: #1D9BF0
+}
+
+.card.github .card-content {
+  color: #ffffff
+}
+
+
+
+/* 
+ <div .card.youtube>
+   <div v>
+     <div .card-content>
+      ...
+     </div>
+   </div>
+ </div>
+*/
+
+.card.icon:before {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 6em;
+  opacity: 0.4;
+  place-self: center;
+  transition: transform 250ms, opacity 250ms;
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: rgb(30, 30, 30); /* Black background color */
+  color: #ffffff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 3; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+
+/* le blob */
+
+/* #blob {
+  background-color: #ffffff;
+  height: 500px;
+  aspect-ratio: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+    to right, 
+    #fc466b 0%, 
+    #3f5efb 100%
+  );
+  animation: rotate 20s infinite;
+} */
+
+#blur {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  backdrop-filter: blur(250px);
+}
+
+#blob2 {
+  background: linear-gradient(100deg, rgba(82,178,175,1) 0%, rgba(82,178,125,1) 22%, rgba(78,117,189,1) 42%, rgba(192,76,203,1) 64%, rgba(228,73,126,1) 82%, rgba(252,70,107,1) 100%);
+  background-size: 1200% 1200%;
+  animation: rotate2 20s infinite;
+  height: 500px;
+  aspect-ratio: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  z-index: -2;
+}
+
+@keyframes rotate {
+  
+  0% {
+    rotate: 0deg;
+  }
+
+  50% {
+    scale: 1 1.5;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
+  
+}
+
+@keyframes rotate2 {
+  0% {
+    rotate: 0deg;
+    background-position: 0% 50%;
+  }
+
+  50% {
+      scale: 1 1.25;
+      background-position: 100% 50%;
+  }
+
+  100% {
+      rotate: 360deg;
+      background-position: 0% 50%;
+  }
+}
