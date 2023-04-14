@@ -137,7 +137,7 @@ body {
     However, delay the fade out process for 2.5 seconds */
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
 }
 
@@ -291,7 +291,7 @@ h1 {
 
 h1:has(span.magic) {
     position: absolute;
-    top: 320px;
+    top: 340px;
 }
 
 /* .magic-wrapper {
@@ -340,7 +340,7 @@ h1 > .magic > .magic-text {
 }
 
 img {
-    top: 190px;
+    top: 210px;
     height: 16%;
     filter: drop-shadow(2px 2px 5px black);
     position: absolute;
@@ -399,5 +399,20 @@ h1 > .magic > .magic-star > path {
 
     to {
         transform: rotate(180deg);
+    }
+}
+
+
+@media screen and (max-width: 1080px) {
+    .card-wrapper {
+        top: 320px;
+    }
+
+    h1:has(span.magic) {
+        top: 256px;
+    }
+
+    img {
+        top: 156px;
     }
 }
