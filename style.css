@@ -364,7 +364,8 @@ h1 > .magic > .magic-star {
     position: absolute;
     top: var(--star-top);
     width: var(--size);
-    fill: var(--violet)
+    fill: var(--violet);
+    filter: drop-shadow(2px 2px 5px black)
 }
 
 h1 > .magic > .magic-star > svg {
