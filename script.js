@@ -85,3 +85,37 @@ document.body.onpointermove = event => {
         top: `${clientY}px`
     }, { duration: 3000, fill: "forwards" });
 }
+
+
+// stars
+
+let index = 0,
+    interval = 1000;
+
+const $stars = document.getElementsByClassName(`magic-star`);
+
+/**
+ * Returns a random number between min and max (inclusive)
+ * @param {number} min
+ * @param {number} max
+ */
+function rand(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function animate(star) {
+    star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
+    star.style.setProperty("--star-top", `${rand(-40, 80)}%`);
+
+    star.style.animation = "none";
+    star.offsetHeight;
+    star.style.animation = "";
+}
+
+for (const $star of $stars) {
+    setTimeout(() => {
+        animate($star);
+
+        setInterval(() => animate($star), 1000);
+    }, index++ * (interval / 3))
+}
