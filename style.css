@@ -24,7 +24,7 @@ body {
     place-self: center;
     position: absolute;
     width: calc(100% - 2em);
-    bottom: 28%;
+    top: 420px;
     z-index: 3;
 }
 
