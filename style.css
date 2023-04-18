@@ -20,9 +20,9 @@ body {
     gap: 1em;
     grid-template-columns: repeat(3, 1fr);
     max-width: 1000px;
-    padding: 1em 0em;
+    /* padding: 1em 0em; */
     place-self: center;
-    position: absolute;
+    /* position: absolute; */
     width: calc(100% - 2em);
     top: 420px;
     z-index: 3;
@@ -290,8 +290,8 @@ h1 {
 }
 
 h1:has(span.magic) {
-    position: absolute;
-    top: 340px;
+    position: relative;
+    top: 300px;
 }
 
 /* .magic-wrapper {
@@ -341,7 +341,8 @@ h1 > .magic > .magic-text {
 
 img {
     top: 210px;
-    height: 16%;
+    /* height: 16%; */
+    height: 9rem;
     filter: drop-shadow(2px 2px 5px black);
     position: absolute;
 }
@@ -415,6 +416,10 @@ h1 > .magic > .magic-star > path {
     img {
         top: 156px;
     }
+}
+
+main {
+    margin: auto;
 }
 
 
